@@ -5,13 +5,11 @@ import CartContext from "../../store/cart-context";
 
 const HeaderCartButton = (props) => {
   const contextData = useContext(CartContext);
-  console.log("contextData header", contextData);
 
   const numberOfCartItems = contextData.items.reduce((curNumber, item) => {
     return curNumber + item.amount;
   }, 0);
 
-  console.log("numberOfCartItems", numberOfCartItems);
   return (
     <button onClick={props.onClick} className={classes.button}>
       <span className={classes.icon}>
